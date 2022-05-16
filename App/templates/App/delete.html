@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="POST"  novalidate >
+    {% csrf_token %}
+
+ <div>
+     {{ form.as_p }}
+ </div>
+    <input type="submit" value="sumit">
+
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'App/base.html' %}
+{% block body %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">message</th>
+      <th scope="col">action</th>
+
+    </tr>
+  </thead>
+
+    {% for x in contact_list %}
+  <tbody>
+    <tr>
+      <th scope="row">{{x.id}}</th>
+      <td>{{x.name}}</td>
+      <td>{{x.email}}</td>
+      <td>{{x.message}}</td>
+      <td><a href="{% url 'update' x.pk %}">update</a>
+       <td> <a href="{% url 'delete' x.pk %}">delete</a></td>
+    </tr>
+
+  </tbody>
+      {% endfor %}
+
+</table>
+
+
+
+
+
+
+</body>
+</html>
+
+
+{% endblock body%}
